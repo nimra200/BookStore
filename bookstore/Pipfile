@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 django = "==3.2.15"
 django-extensions = "==3.2.1"
+asgiref = "==3.5.2"
+djangorestframework = "==3.14.0"
+pytz = "==2022.2.1"
+sqlparse = "==0.4.2"
+typing-extensions = "==4.3.0"
 
 [dev-packages]
 
