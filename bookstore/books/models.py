@@ -11,4 +11,10 @@ class Book(models.Model):
         return str(self.title) + " by " + str(self.author)
 
 class BookStore(models.Model):
-    books = models.ManyToManyField(Book)
+    name = models.CharField(max_length=200)
+    # many-to-many relationship
+    # a book store has many books, a book can be in many bookstores 
+    books = models.ManyToManyField('Book', related_name="bookstores", blank=True)
+    
+    def __str__(self):
+        return str(self.name)
