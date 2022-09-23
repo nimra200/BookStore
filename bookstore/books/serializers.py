@@ -1,4 +1,5 @@
-from rest_framework import serializers 
+from rest_framework import serializers
+from django.contrib.auth.models import User
 from .models import Book, BookStore
 
 
@@ -14,3 +15,8 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book
         fields = ("id", "author", "title", "publication_year", "price", "bookstores")
         extra_kwargs = {'bookstores': {'required': False}}
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'password')
